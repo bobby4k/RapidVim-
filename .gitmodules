@@ -1,0 +1,6 @@
+[submodule "pack/vendor/start/nerdcommenter"]
+	path = pack/vendor/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "pack/vendor/start/nerdtree"]
+	path = pack/vendor/start/nerdtree
+	url = git@github.com:preservim/nerdtree.git
