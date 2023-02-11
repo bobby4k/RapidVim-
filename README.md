@@ -24,10 +24,12 @@ A rapidly available version of vim configuration
 ```
     
 - 方式2: tar xvf 
-   - 下载安装包 [rvim_0.1.tar.gz](https://github.com/bobby4k/rvim/releases/download/v0.1/rvim_0.1.tar.gz)
+   - 下载安装包 
+       - [github rvim_0.1.tar.gz](https://github.com/bobby4k/rvim/releases/download/v0.1/rvim_0.1.tar.gz)
+       - [gitee rvim_0.1.tar.gz](https://gitee.com/bobby4k/rvim/releases/download/v0.1/rvim_0.1.tar.gz)
 ```jsx
     cd ~ ; mv .vimrc .vimrc_bak ; mv .vim/  .vim_bak
-    tar xvf rvim_xxxx.tar.gz
+    tar xvf rvim_0.1.tar.gz
     ln -sf .vim/.vimrc .vimrc
 ```
     
