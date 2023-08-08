@@ -1,3 +1,11 @@
+# Thanks to Bram Moolenaar that we have this remarkable editor, Vim.
+
+-
+-
+-
+-
+
+
 # rvim - RapidVim
 A rapidly available version of vim configuration
 
