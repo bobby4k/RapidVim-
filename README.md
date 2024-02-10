@@ -24,14 +24,18 @@ A rapidly available version of vim configuration
 
 
 ### 必要快捷键:
-    -  \<leader\> 空格
-    -  \<esc\> jj
-    -  Ct 开启/关闭 nerdtree目录树窗口
-        -  Cww 切换窗口
-    -  \<leader\>cc 注释
-        -  \<leader\>cu 取消注释
-    -  Cx Co 自动补全 
-    - :qa 退出所有(:quitall的缩写)
+-  \<leader\> 空格
+-  \<esc\> jj
+-  Ct 开启/关闭 nerdtree目录树窗口
+    -  Cww 切换窗口
+-  \<leader\>cc 注释
+    -  \<leader\>cu 取消注释
+-  Cx Co 自动补全 
+-  格式化与缩进
+    - 向左右缩进 shift + > （或者 Shift + < ）
+    - 对齐缩进 v模式,方向键 ←→↑↓ 选择, 等号键=, 对齐第一行
+    - gg=G 自动格式化整个文件 
+- :qa 退出所有(:quitall的缩写)
 
 ## 安装
 - 方式1: git clone 
