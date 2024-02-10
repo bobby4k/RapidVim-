@@ -62,6 +62,19 @@ set completeopt=menuone,preview,noselect " 补全时不显示窗口，只显示�
 set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
+" 补全插件 NeoComplCache
+" :NeoComplCacheEnable
+let g:neocomplcache_enable_at_startup = 1
+"" open the snippet
+"" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
+" imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+" smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand) 
+""jump to next placeholder
+" imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+" smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+"" <C-h>, <BS>: close popup and delete backword char.
+" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>" 
+
 
 " 搜索设置
 set hlsearch            " 高亮显示搜索结果
