@@ -368,6 +368,43 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
+" ctags
+set tags=tags
+" 当打开文件时，自动设置 tags
+autocmd BufReadPost * call SetTags()
+
+function! SetTags()
+    let l:tags_file = findfile('tags', expand('%:p:h') . ';' , ';')
+
+    if !empty(l:tags_file)
+        " 检查 tags 是否已经包含这个文件
+        if index(tagfiles(), l:tags_file) == -1
+            let &tags .= ',' . l:tags_file
+        endif
+    else
+        set tags-=
+    endif
+endfunction
+
+" gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+
+" 所生成的数据文件的名称 "
+let g:gutentags_ctags_tagfile = '.tags'
+
+" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+" 检测 ~/.cache/tags 不存在就新建 "
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" 配置 ctags 的参数 "
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
 
 " 以下可选:
 " TagList 显示宏/变量/函数等Tag(依赖ctags) https://vim-taglist.sourceforge.net/installation.html

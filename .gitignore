@@ -14,6 +14,10 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# ctags
+tags
+TAGS
+
 # NeoComplCache
 doc/tags*
 *.swp

@@ -4,3 +4,6 @@
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = git@github.com:preservim/nerdtree.git
+[submodule "pack/vendor/start/vim-gutentags"]
+	path = pack/vendor/start/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
