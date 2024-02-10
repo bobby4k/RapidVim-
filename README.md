@@ -15,13 +15,23 @@ A rapidly available version of vim configuration
 - 默认安装 preservim/nerd{tree,commenter}两个插件
     - 语法高亮 syntax enable
     - 代码补全 set omnifunc=syntaxcomplete#Complete
-- 必要快捷键:
+- 增加老版本代码补全neocomplcache 
+    - 无需lua、python、nodejs支持
+    - 编辑vim配置文件时会产生 set_dictionary_hel 错误
+        - Cc 关闭 或者 :silent! TroublesomeCommand
+        - :NeoComplCacheDisable 临时关闭该插件
+
+
+
+### 必要快捷键:
     -  \<leader\> 空格
     -  \<esc\> jj
     -  Ct 开启/关闭 nerdtree目录树窗口
+        -  Cww 切换窗口
     -  \<leader\>cc 注释
-    -  \<leader\>cu 取消注释
+        -  \<leader\>cu 取消注释
     -  Cx Co 自动补全 
+    - :qa 退出所有(:quitall的缩写)
 
 ## 安装
 - 方式1: git clone 
