@@ -10,6 +10,9 @@ if !isdirectory(expand("~/.vim/"))
 endif
 
 set runtimepath+=$HOME/.vim
+" cache目录
+let s:cachepath = expand($HOME. "/.vim/cache")
+if !isdirectory(s:cachepath) | call mkdir(s:cachepath, "p") | endif
 
 " ##文本属性 Start
 " 编码设置
@@ -64,7 +67,11 @@ set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
 " 补全插件 NeoComplCache
 " :NeoComplCacheEnable
-let g:neocomplcache_enable_at_startup = 1
+if &filetype != 'vim'
+    let g:neocomplcache_enable_at_startup = 0
+endif
+let g:neocomplcache_temporary_dir = s:cachepath
+
 "" open the snippet
 "" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
 " imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
@@ -402,7 +409,8 @@ let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
 
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-let s:vim_tags = expand('~/.cache/tags')
+" let s:vim_tags = expand('~/.cache/tags')
+let s:vim_tags = s:cachepath . '/gutentags'
 let g:gutentags_cache_dir = s:vim_tags
 " 检测 ~/.cache/tags 不存在就新建 "
 if !isdirectory(s:vim_tags)

@@ -1,6 +1,8 @@
 #vim
 .last.session
 undotree/
+swapfiles/
+cache/
 
 # Environments
 .env

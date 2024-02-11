@@ -29,7 +29,7 @@ A rapidly available version of vim configuration
     - 临时方案 Cc 关闭 或者 :silent! TroublesomeCommand
     - 先关闭插件, 再打开vim配置文件
 ```shell
-sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enable_at_startup\ =\ 0/' ~/.vimrc
+sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enable_at_startup\ =\ 0/' ~/.vim/.vimrc
 ```
 
 
