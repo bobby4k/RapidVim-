@@ -324,6 +324,15 @@ set backspace=eol,start,indent
 " 与vsc保持一致leader and esc
 let g:mapleader = "\<Space>"
 imap jj <Esc>
+
+nnoremap <leader>qq :qa<CR>
+nnoremap <leader>1 :1b<CR>
+nnoremap <leader>2 :2b<CR>
+nnoremap <leader>3 :3b<CR> 
+nnoremap <leader>4 :4b<CR> 
+nnoremap <leader>5 :5b<CR> 
+nnoremap <leader>6 :6b<CR> 
+nnoremap <leader>7 :7b<CR> 
 " ##键功能 End
 
 " ##插件 Start

@@ -45,7 +45,13 @@ sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enab
     - 向左右缩进 shift + > （或者 Shift + < ）
     - 对齐缩进 v模式,方向键 ←→↑↓ 选择, 等号键=, 对齐第一行
     - gg=G 自动格式化整个文件
-- :qa 退出所有(:quitall的缩写)
+-  多文件/buffer切换
+    - `:ls` 列出当前打开文件
+    - `:b3` 切换第三个文件
+        - \<leader\>1-7 绑定
+    - `:bd3` 关闭第三个文件
+- `:qa` 退出所有(:quitall的缩写)
+    - \<leader\>qq 绑定
 
 ## 安装
 - 方式1: git clone
