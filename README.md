@@ -1,5 +1,4 @@
 # Thanks to Bram Moolenaar that we have this remarkable editor, Vim.
-
 -
 -
 -
@@ -9,7 +8,7 @@
 # rvim - RapidVim
 A rapidly available version of vim configuration
 
-## 目标
+## 简单说明情况
 一个基于系统自带vim，快速可用的配置。
 - 使用Vim 8+ packages
     - 仅依赖ctags
@@ -18,14 +17,17 @@ A rapidly available version of vim configuration
     - 目录树 preservim/nerdtree
     - 代码注释 preservim/nerdcommenter
     - 老年人代码补全 neocomplcache
+        - 仅Insert模式下显示补全弹框
     - ctags增量更新 vim-gutentags
 - 默认开启
     - 语法高亮 `syntax enable`
     - 代码补全(内置) `set omnifunc=syntaxcomplete#Complete`
     - ctags `set tags=tags`
+- 显示相对行号
+    - 在Insert模式关闭
 
 ### 已知问题
-- 编辑vim配置文件时会产生 neocomplcache插件的set_dictionary_hel 错误
+- 编辑vim配置文件时会产生 neocomplcache插件的set_dictionary_help错误
     - 临时方案 Cc 关闭 或者 :silent! TroublesomeCommand
     - 先关闭插件, 再打开vim配置文件
 ```shell
@@ -34,12 +36,13 @@ sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enab
 
 
 ### 必要快捷键:
--  \<leader\> 空格
--  \<esc\> jj
+-  `<leader>`键 空格<space>
+-  `jj`绑定 `<esc>`
 -  Ct 开启/关闭 nerdtree目录树窗口
     -  Cww 切换窗口
--  \<leader\>cc 注释
-    -  \<leader\>cu 取消注释
+-  `<leader>/` 自动切换注释
+    - `<leader>cc` 添加注释
+    - `<leader>cu` 取消注释
 -  Cx Co 自动补全
 -  格式化与缩进
     - 向左右缩进 shift + > （或者 Shift + < ）
@@ -48,10 +51,11 @@ sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enab
 -  多文件/buffer切换
     - `:ls` 列出当前打开文件
     - `:b3` 切换第三个文件
-        - \<leader\>1-7 绑定
+        - `<leader>1-7` 绑定
     - `:bd3` 关闭第三个文件
 - `:qa` 退出所有(:quitall的缩写)
-    - \<leader\>qq 绑定
+    - `<leader>qq` 绑定 `:qa`
+    - `<leader>qa` 绑定 `:qa!`
 
 ## 安装
 - 方式1: git clone

@@ -65,12 +65,18 @@ set completeopt=menuone,preview,noselect " 补全时不显示窗口，只显示�
 set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
-" 补全插件 NeoComplCache
-" :NeoComplCacheEnable
-if &filetype != 'vim'
-    let g:neocomplcache_enable_at_startup = 0
-endif
+" 补全插件 :NeoComplCacheEnable
+let g:neocomplcache_enable_at_startup = 1
+augroup neocomplcache_lock
+    autocmd!
+    autocmd InsertEnter * :NeoComplCacheUnlock
+    autocmd InsertLeave * :NeoComplCacheLock
+augroup END
 let g:neocomplcache_temporary_dir = s:cachepath
+" if &filetype != 'vim'
+" endif
+
+
 
 "" open the snippet
 "" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
@@ -114,7 +120,12 @@ set mousehide
 set ruler
 
 " Show line number by default
-set number norelativenumber
+set number relativenumber
+augroup relative_numbser
+    autocmd!
+    autocmd InsertEnter * :set norelativenumber
+    autocmd InsertLeave * :set relativenumber
+augroup END
 
 " Turn spell check off
 set nospell
@@ -333,6 +344,7 @@ let g:mapleader = "\<Space>"
 imap jj <Esc>
 
 nnoremap <leader>qq :qa<CR>
+nnoremap <leader>qa :qa!<CR>
 nnoremap <leader>1 :1b<CR>
 nnoremap <leader>2 :2b<CR>
 nnoremap <leader>3 :3b<CR> 
@@ -381,8 +393,12 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+" enable nerdcommentertoggle to check all selected lines is commented or not
+let g:nerdtogglecheckalllines = 1
+
+" 修改 nerdcommentertoggle 的快捷键为 <leader>/
+nmap <Leader>/ <Plug>NERDCommenterToggle
+xmap <Leader>/ <Plug>NERDCommenterToggle
 
 " ctags
 set tags=tags
