@@ -13,6 +13,8 @@ set runtimepath+=$HOME/.vim
 " cache目录
 let s:cachepath = expand($HOME. "/.vim/cache")
 if !isdirectory(s:cachepath) | call mkdir(s:cachepath, "p") | endif
+" workspace为第一个打开的目录
+autocmd VimEnter * silent! cd %:p:h
 
 " ##文本属性 Start
 " 编码设置
@@ -75,8 +77,6 @@ augroup END
 let g:neocomplcache_temporary_dir = s:cachepath
 " if &filetype != 'vim'
 " endif
-
-
 
 "" open the snippet
 "" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
@@ -352,6 +352,9 @@ nnoremap <leader>4 :4b<CR>
 nnoremap <leader>5 :5b<CR> 
 nnoremap <leader>6 :6b<CR> 
 nnoremap <leader>7 :7b<CR> 
+
+map <leader>s :w<CR>
+imap <leader>s <Esc>:w<CR>i
 " ##键功能 End
 
 " ##插件 Start
@@ -366,7 +369,14 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-
+" Refresh tree
+map <C-n> :call NERDTreeToggleAndRefresh()<CR>
+function NERDTreeToggleAndRefresh()
+  :NERDTreeToggle
+  if g:NERDTree.IsOpen()
+    :NERDTreeRefreshRoot
+  endif
+endfunction
 
 " NERD Commenter 快捷注释 https://github.com/preservim/nerdcommenter
 " Create default mappings
