@@ -16,7 +16,13 @@ if !isdirectory(s:cachepath) | call mkdir(s:cachepath, "p") | endif
 " workspace为第一个打开的目录
 autocmd VimEnter * silent! cd %:p:h
 
+" ##GVIM UI Start
+set guifont=Fira\ Code\ SemiBold:h16
+" ##GVIM End
+
 " ##文本属性 Start
+" 配色
+colorscheme desert
 " 编码设置
 set langmenu=zh_CN.UTF-8
 set helplang=cn
@@ -68,7 +74,7 @@ set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
 " 补全插件 :NeoComplCacheEnable
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 0
 augroup neocomplcache_lock
     autocmd!
     autocmd InsertEnter * :NeoComplCacheUnlock
@@ -80,14 +86,6 @@ let g:neocomplcache_temporary_dir = s:cachepath
 
 "" open the snippet
 "" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
-" imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
-" smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand) 
-""jump to next placeholder
-" imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
-" smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
-"" <C-h>, <BS>: close popup and delete backword char.
-" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>" 
-
 
 " 搜索设置
 set hlsearch            " 高亮显示搜索结果
