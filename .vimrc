@@ -74,7 +74,7 @@ set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
 " 补全插件 :NeoComplCacheEnable
-let g:neocomplcache_enable_at_startup = 0
+let g:neocomplcache_enable_at_startup = 1
 augroup neocomplcache_lock
     autocmd!
     autocmd InsertEnter * :NeoComplCacheUnlock
