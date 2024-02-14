@@ -41,6 +41,7 @@ set smartindent " Smart indent
 filetype on
 filetype plugin on
 filetype plugin indent on
+au BufNewFile,BufRead *.conf setf dosini
 
 " 1 tab == 4 spaces
 set tabstop=4
