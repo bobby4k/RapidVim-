@@ -343,6 +343,7 @@ imap jj <Esc>
 
 nnoremap <leader>qq :qa<CR>
 nnoremap <leader>qa :qa!<CR>
+nnoremap <leader>b :bn<CR>
 nnoremap <leader>1 :1b<CR>
 nnoremap <leader>2 :2b<CR>
 nnoremap <leader>3 :3b<CR> 
