@@ -70,6 +70,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 " 代码补全
 set wildmenu                             " vim自身命名行模式智能补全
+set wildmode=list:full
 set completeopt=menuone,preview,noselect " 补全时不显示窗口，只显示补全列表
 set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
@@ -341,7 +342,7 @@ nnoremap <leader>6 :6b<CR>
 nnoremap <leader>7 :7b<CR> 
 
 map <leader>s :w<CR>
-imap <leader>s <Esc>:w<CR>i
+" imap <leader>s <Esc>:w<CR>i
 " ##键功能 End
 
 " ##插件 Start
