@@ -74,19 +74,6 @@ set completeopt=menuone,preview,noselect " 补全时不显示窗口，只显示�
 set omnifunc=syntaxcomplete#Complete     " 设置全能补全
 set shortmess+=c                         " 设置补全静默
 set cpt+=kspell                          " 设置补全单词
-" 补全插件 :NeoComplCacheEnable
-let g:neocomplcache_enable_at_startup = 1
-augroup neocomplcache_lock
-    autocmd!
-    autocmd InsertEnter * :NeoComplCacheUnlock
-    autocmd InsertLeave * :NeoComplCacheLock
-augroup END
-let g:neocomplcache_temporary_dir = s:cachepath
-" if &filetype != 'vim'
-" endif
-
-"" open the snippet
-"" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
 
 " 搜索设置
 set hlsearch            " 高亮显示搜索结果
@@ -447,6 +434,20 @@ endif
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" 补全插件 :NeoComplCacheEnable
+let g:neocomplcache_enable_at_startup = 1
+augroup neocomplcache_lock
+    autocmd!
+    autocmd InsertEnter * :NeoComplCacheUnlock
+    autocmd InsertLeave * :NeoComplCacheLock
+augroup END
+let g:neocomplcache_temporary_dir = s:cachepath
+" if &filetype != 'vim'
+" endif
+
+"" open the snippet
+"" like: https://github.com/honza/vim-snippets/blob/master/snippets/python.snippets
 
 
 " 以下可选:
