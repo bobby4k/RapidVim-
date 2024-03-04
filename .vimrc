@@ -296,8 +296,8 @@ set splitright " Puts new vsplit windows to the right of the current
 set splitbelow " Puts new split windows to the bottom of the current
 
 " Split management
-nnoremap <silent> [b :bprevious<cr>
-nnoremap <silent> ]b :bnext<cr>
+" nnoremap <silent> [b :bprevious<cr>
+" nnoremap <silent> ]b :bnext<cr>
 nnoremap <silent> <C-k> :resize +2<CR>
 nnoremap <silent> <C-j> :resize -2<CR>
 nnoremap <silent> <C-h> :vertical resize +4<CR>
@@ -340,6 +340,11 @@ nnoremap <leader>4 :4b<CR>
 nnoremap <leader>5 :5b<CR> 
 nnoremap <leader>6 :6b<CR> 
 nnoremap <leader>7 :7b<CR> 
+nnoremap <leader>8 :8b<CR> 
+nnoremap <leader>9 :9b<CR> 
+nnoremap <silent> <leader>h :bprevious<cr>
+nnoremap <silent> <leader>l :bnext<cr>
+
 
 map <leader>s :w<CR>
 " imap <leader>s <Esc>:w<CR>i
