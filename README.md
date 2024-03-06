@@ -51,7 +51,8 @@ sed -i 's/let\ g:neocomplcache_enable_at_startup\ =\ 1/let\ g:neocomplcache_enab
 -  多文件/buffer切换
     - `:ls` 列出当前打开文件
     - `:b3` 切换第三个文件
-        - `<leader>1-7` 绑定
+        - `<leader>1-9` 绑定
+        - `<leader>h/l` 向前/后切换buffer
     - `:bd3` 关闭第三个文件
 - `:qa` 退出所有(:quitall的缩写)
     - `<leader>qq` 绑定 `:qa`
